@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail" data-bg-color="#FFFFFF">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#FFFFFF"/>
+    <text x="600" y="360" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="120" fill="#0D0D0D">Page</text>
+    <text x="600" y="470" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="120" fill="#0D0D0D">by Magnus</text>
+    <rect x="500" y="540" width="200" height="3" fill="#0D0D0D"/>
+  </svg>
+</template>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#FFFFFF;}
+  a{text-decoration:none;color:inherit;}
+  :focus-visible{outline:2px solid #0D0D0D;outline-offset:3px;border-radius:4px;}
+  @keyframes scfade{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
+  .scard .sprev{transition:transform .5s cubic-bezier(.16,1,.3,1);}
+  .scard:hover .sprev{transform:scale(1.04);}
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.01ms !important;transition-duration:.01ms !important;}
+  }
+</style>
+</helmet>
+<div ref="{{ setRoot }}" style="{{ page }}">
+  <header style="{{ heroSection }}" aria-labelledby="hero-heading">
+    <div data-anim="hero-brand" style="{{ brandStyle }}">Page by Magnus</div>
+    <h1 id="hero-heading" data-anim="hero-head" style="{{ h1Style }}">Premium Website Demos</h1>
+    <p data-anim="hero-copy" style="{{ heroCopy }}">A curated collection of modern one-page websites built for personal trainers, cafés, and small businesses.</p>
+    <div data-anim="hero-cta" style="{{ ctaRow }}">
+      <a href="#trainer" style="{{ btnPrimary }}" style-hover="{{ btnPrimaryHover }}" style-active="{{ btnPrimaryActive }}">Browse Demos</a>
+      <a href="https://www.instagram.com/pagebymagnus/" target="_blank" rel="noopener noreferrer" style="{{ btnGhost }}" style-hover="{{ btnGhostHover }}">Instagram <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main>
+    <section id="trainer" style="{{ sectionTrainer }}" aria-labelledby="trainer-heading">
+      <div style="{{ container }}">
+        <div data-anim="t-head" style="{{ headWrapTrainer }}">
+          <h2 id="trainer-heading" style="{{ secTitle }}">Personal Trainer</h2>
+          <p style="{{ secSub }}">Modern coaching websites designed to convert visitors into clients.</p>
+        </div>
+        <div style="{{ gridTrainer }}">
+          <sc-for list="{{ trainerCards }}" as="card" hint-placeholder-count="3">
+            <article class="scard" data-anim="{{ card.key }}" style="{{ card.style }}" style-hover="{{ cardHover }}">
+              <div style="{{ previewWrap }}">
+                <div style="{{ chromeBar }}">
+                  <span style="{{ dotRed }}"></span>
+                  <span style="{{ dotYellow }}"></span>
+                  <span style="{{ dotGreen }}"></span>
+                </div>
+                <div class="sprev" ref="{{ setPreview }}" style="{{ previewContent }}">
+                  <iframe src="{{ card.href }}" title="{{ card.frameTitle }}" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" style="{{ previewFrame }}" onLoad="{{ onFrameLoad }}" onError="{{ onFrameError }}"></iframe>
+                  <img data-fallback="{{ card.img }}" alt="{{ card.imgAlt }}" style="{{ previewImg }}" />
+                </div>
+              </div>
+              <div style="{{ cardBody }}">
+                <span style="{{ badge }}">{{ card.badge }}</span>
+                <h3 style="{{ cardName }}">{{ card.name }}</h3>
+                <p style="{{ cardDesc }}">{{ card.desc }}</p>
+                <a href="{{ card.href }}" target="_blank" rel="noopener noreferrer" aria-label="{{ card.aria }}" style="{{ openLink }}" style-hover="{{ openLinkHover }}">Open Demo <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+
+    <section id="cafe" style="{{ sectionCafe }}" aria-labelledby="cafe-heading">
+      <div style="{{ containerRule }}">
+        <div data-anim="c-head" style="{{ headWrapCafe }}">
+          <h2 id="cafe-heading" style="{{ secTitle }}">Café &amp; Coffee Shop</h2>
+          <p style="{{ secSubWide }}">Editorial-inspired landing pages crafted for cafés, brunch concepts, and coffee brands.</p>
+        </div>
+        <div style="{{ gridCafe }}">
+          <sc-for list="{{ cafeCards }}" as="card" hint-placeholder-count="2">
+            <article class="scard" data-anim="{{ card.key }}" style="{{ card.style }}" style-hover="{{ cardHover }}">
+              <div style="{{ previewWrap }}">
+                <div style="{{ chromeBar }}">
+                  <span style="{{ dotRed }}"></span>
+                  <span style="{{ dotYellow }}"></span>
+                  <span style="{{ dotGreen }}"></span>
+                </div>
+                <div class="sprev" ref="{{ setPreview }}" style="{{ previewContent }}">
+                  <iframe src="{{ card.href }}" title="{{ card.frameTitle }}" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true" style="{{ previewFrame }}" onLoad="{{ onFrameLoad }}" onError="{{ onFrameError }}"></iframe>
+                  <img data-fallback="{{ card.img }}" alt="{{ card.imgAlt }}" style="{{ previewImg }}" />
+                </div>
+              </div>
+              <div style="{{ cardBody }}">
+                <span style="{{ badge }}">{{ card.badge }}</span>
+                <h3 style="{{ cardName }}">{{ card.name }}</h3>
+                <p style="{{ cardDesc }}">{{ card.desc }}</p>
+                <a href="{{ card.href }}" target="_blank" rel="noopener noreferrer" aria-label="{{ card.aria }}" style="{{ openLink }}" style-hover="{{ openLinkHover }}">Open Demo <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="{{ footerSection }}">
+    <div data-anim="footer" style="{{ containerRule }}">
+      <div style="{{ footerRow }}">
+        <div style="{{ footerLeft }}">
+          <div style="{{ footerBrand }}">Page by Magnus</div>
+          <div style="{{ footerTagline }}">Premium Websites for Small Businesses</div>
+        </div>
+        <a href="https://www.instagram.com/pagebymagnus/" target="_blank" rel="noopener noreferrer" style="{{ footerIG }}" style-hover="{{ footerIGHover }}">Instagram <span aria-hidden="true">↗</span></a>
+      </div>
+      <div style="{{ copyright }}">© 2025 Page by Magnus</div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1120,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { bp: 'desktop', shown: {} };
+
+  setRoot = (n) => { this.root = n; };
+
+  onResize = () => {
+    const w = window.innerWidth;
+    const bp = w >= 1024 ? 'desktop' : (w >= 640 ? 'tablet' : 'mobile');
+    if (bp !== this.state.bp) this.setState({ bp });
+  };
+
+  componentDidMount() {
+    this.reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.onResize();
+    window.addEventListener('resize', this.onResize);
+
+    const reveal = (k) => this.setState(s => ({ shown: { ...s.shown, [k]: true } }));
+
+    if (this.reduced) {
+      // Reveal everything immediately
+      const all = ['hero-brand','hero-head','hero-copy','hero-cta','t-head','t-card-0','t-card-1','t-card-2','c-head','c-card-0','c-card-1','footer'];
+      const o = {}; all.forEach(k => o[k] = true);
+      this.setState({ shown: o });
+      return;
+    }
+
+    const revealAll = () => {
+      const all = ['hero-brand','hero-head','hero-copy','hero-cta','t-head','t-card-0','t-card-1','t-card-2','c-head','c-card-0','c-card-1','footer'];
+      const o = {}; all.forEach(k => o[k] = true);
+      this.setState({ shown: o });
+    };
+
+    this._io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          reveal(e.target.getAttribute('data-anim'));
+          this._io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    requestAnimationFrame(() => {
+      const scope = this.root || document;
+      const els = scope.querySelectorAll('[data-anim]');
+      if (!els.length) { revealAll(); return; }
+      els.forEach(el => this._io.observe(el));
+    });
+
+    // Safety: if the observer never fires (ref/IO edge cases), reveal everything.
+    this._fallback = setTimeout(revealAll, 1200);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.onResize);
+    if (this._io) this._io.disconnect();
+    if (this._fallback) clearTimeout(this._fallback);
+  }
+
+  shown(k) { return !!(this.reduced || this.state.shown[k]); }
+
+  anim(k, delay) {
+    return {
+      opacity: 1,
+      animation: this.reduced ? 'none' : `scfade .5s cubic-bezier(.16,1,.3,1) ${delay}ms both`,
+    };
+  }
+
+  cardStyle(k, delay) {
+    return {
+      display: 'flex', flexDirection: 'column',
+      background: '#FAFAFA', border: '1px solid #E8E8E8', borderRadius: '10px',
+      overflow: 'hidden',
+      transition: 'border-color .25s ease, box-shadow .25s ease',
+      animation: this.reduced ? 'none' : `scfade .4s cubic-bezier(.16,1,.3,1) ${delay}ms both`,
+    };
+  }
+
+  setPreview = (node) => {
+    if (!this._previews) this._previews = new Map();
+    if (!node) return;
+    if (this._previews.has(node)) return;
+    const fit = () => {
+      const iframe = node.querySelector('iframe');
+      if (!iframe) return;
+      const w = node.clientWidth, h = node.clientHeight;
+      if (!w || !h) return;
+      const scale = Math.max(w / 1280, h / 800);
+      iframe.style.transform = `scale(${scale})`;
+    };
+    const ro = new ResizeObserver(fit);
+    ro.observe(node);
+    this._previews.set(node, ro);
+    fit();
+  };
+
+  onFrameLoad = (e) => { e.target.style.display = 'block'; };
+  onFrameError = (e) => {
+    e.target.style.display = 'none';
+    const img = e.target.nextElementSibling;
+    if (img) {
+      const src = img.getAttribute('data-fallback');
+      if (src && !img.getAttribute('src')) img.setAttribute('src', src);
+      img.style.display = 'block';
+    }
+  };
+
+  renderVals() {
+    const bp = this.state.bp;
+    const isDesk = bp === 'desktop';
+    const isMob = bp === 'mobile';
+
+    const pad = isDesk ? 40 : (bp === 'tablet' ? 24 : 20);
+    const container = { width: '100%', maxWidth: '1120px', margin: '0 auto', padding: `0 ${pad}px` };
+    const containerRule = { ...container, borderTop: '1px solid #E8E8E8' };
+
+    // Hero
+    const heroPadTop = isMob ? 96 : 160;
+    const heroPadBot = isMob ? 80 : 128;
+    const headlineSize = isDesk ? 72 : (bp === 'tablet' ? 56 : 42);
+
+    // Section header sizing
+    const titleSize = isDesk ? 44 : (bp === 'tablet' ? 36 : 28);
+    const subSize = isDesk ? 17 : (bp === 'tablet' ? 16 : 15);
+    const secPadTop = isMob ? 64 : 96;
+    const secPadBot = isMob ? 64 : 96;
+
+    const trainerCols = isDesk ? 'repeat(3,1fr)' : (bp === 'tablet' ? 'repeat(2,1fr)' : '1fr');
+    const cafeCols = isMob ? '1fr' : 'repeat(2,1fr)';
+    const gridGap = isDesk ? 24 : (bp === 'tablet' ? 20 : 16);
+
+    const btnBase = {
+      display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '6px',
+      height: '44px', padding: '0 24px', borderRadius: '6px',
+      fontFamily: "'Inter',sans-serif", fontWeight: 500, fontSize: '14px', letterSpacing: '0.01em',
+      width: isMob ? '100%' : 'auto', cursor: 'pointer',
+    };
+
+    const td = (name) => `Open ${name} demo (opens in new tab)`;
+
+    const slug = (n) => n.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    const mkCard = (c, i, prefix) => {
+      const key = `${prefix}-card-${i}`;
+      const s = slug(c.name);
+      return {
+        ...c, key, aria: td(c.name), style: this.cardStyle(key, i * 80),
+        img: `screenshots/${s}.png`, imgAlt: `${c.name} website preview`,
+        frameTitle: `${c.name} preview`,
+      };
+    };
+
+    const trainerCards = [
+      { badge: 'PERSONAL TRAINER', name: 'Fit With Me', desc: 'A clean, conversion-focused website for female fitness coaches. Warm, motivating, and built around trust.', href: 'https://fit-with-me-website.vercel.app/' },
+      { badge: 'PERSONAL TRAINER', name: 'Studio Vera', desc: 'A bold studio identity for strength training and group coaching. Dark, structured, and unapologetically confident.', href: 'https://studio-vera-demo-magnus.vercel.app/' },
+      { badge: 'PERSONAL TRAINER', name: 'Serene Strength', desc: 'A calm, editorial design for premium wellness coaching. Refined palette, generous spacing, high-trust aesthetic.', href: 'https://serene-strength-demo-magnus.vercel.app/' },
+    ].map((c, i) => mkCard(c, i, 't'));
+
+    const cafeCards = [
+      { badge: 'CAFÉ', name: 'Neighborhood Warmth', desc: 'A cozy, editorial café website with a warm amber palette and artisan typography. Designed for local coffee shops with character.', href: 'https://neighborhood-warmth-website.vercel.app/' },
+      { badge: 'CAFÉ', name: 'Matinal Cafe', desc: 'A bright, minimal brunch concept website. Clean type, morning light energy, and a menu layout that sells itself.', href: 'https://matinal-cafe-demo-magnus.vercel.app/' },
+    ].map((c, i) => mkCard(c, i, 'c'));
+
+    return {
+      setRoot: this.setRoot,
+      trainerCards, cafeCards,
+
+      page: {
+        background: '#FFFFFF', color: '#0D0D0D', minHeight: '100vh',
+        fontFamily: "'Inter',-apple-system,sans-serif",
+        WebkitFontSmoothing: 'antialiased',
+      },
+
+      // Hero
+      heroSection: {
+        display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center',
+        padding: `${heroPadTop}px ${pad}px ${heroPadBot}px`,
+        maxWidth: '1120px', margin: '0 auto',
+      },
+      brandStyle: {
+        ...this.anim('hero-brand', 0),
+        fontFamily: "'Inter',sans-serif", fontWeight: 600, fontSize: '13px',
+        letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9B9B9B',
+        marginBottom: '40px',
+      },
+      h1Style: {
+        ...this.anim('hero-head', 100),
+        fontFamily: "'Instrument Serif',Georgia,serif", fontWeight: 400,
+        fontSize: `${headlineSize}px`, lineHeight: 1.05, letterSpacing: '-0.03em',
+        color: '#0D0D0D', margin: '0 0 24px',
+      },
+      heroCopy: {
+        ...this.anim('hero-copy', 200),
+        fontFamily: "'Inter',sans-serif", fontWeight: 400, fontSize: '18px',
+        lineHeight: 1.65, color: '#5C5C5C', maxWidth: '560px', margin: '0 0 40px',
+      },
+      ctaRow: {
+        ...this.anim('hero-cta', 300),
+        display: 'flex', flexDirection: isMob ? 'column' : 'row',
+        justifyContent: 'center', alignItems: 'center', gap: '12px',
+        width: isMob ? '100%' : 'auto', maxWidth: isMob ? '320px' : 'none',
+      },
+      btnPrimary: { ...btnBase, background: '#0D0D0D', color: '#FFFFFF', transition: 'background-color .2s ease, transform .1s ease' },
+      btnPrimaryHover: { background: '#2A2A2A' },
+      btnPrimaryActive: { transform: 'scale(0.97)' },
+      btnGhost: { ...btnBase, background: 'transparent', color: '#0D0D0D', border: '1px solid #E8E8E8', transition: 'border-color .2s ease, color .2s ease' },
+      btnGhostHover: { borderColor: '#C0C0C0', color: '#5C5C5C' },
+
+      // Sections
+      sectionTrainer: { padding: `${secPadTop}px 0 ${secPadBot}px` },
+      sectionCafe: { padding: `${secPadTop}px 0 ${secPadBot}px` },
+      container, containerRule,
+
+      headWrapTrainer: { marginBottom: '48px', ...this.anim('t-head', 0) },
+      headWrapCafe: { marginBottom: '48px', ...this.anim('c-head', 0) },
+      secTitle: {
+        fontFamily: "'Instrument Serif',Georgia,serif", fontWeight: 400,
+        fontSize: `${titleSize}px`, lineHeight: 1.15, letterSpacing: '-0.01em',
+        color: '#0D0D0D', margin: '0 0 16px',
+      },
+      secSub: {
+        fontFamily: "'Inter',sans-serif", fontWeight: 400, fontSize: `${subSize}px`,
+        lineHeight: 1.6, color: '#5C5C5C', maxWidth: '480px', margin: 0,
+      },
+      secSubWide: {
+        fontFamily: "'Inter',sans-serif", fontWeight: 400, fontSize: `${subSize}px`,
+        lineHeight: 1.6, color: '#5C5C5C', maxWidth: '520px', margin: 0,
+      },
+
+      gridTrainer: { display: 'grid', gridTemplateColumns: trainerCols, gap: `${gridGap}px` },
+      gridCafe: { display: 'grid', gridTemplateColumns: cafeCols, gap: `${gridGap}px` },
+
+      cardHover: { borderColor: '#C0C0C0', boxShadow: '0 4px 24px rgba(0,0,0,0.07)' },
+
+      previewWrap: {
+        position: 'relative', width: '100%', aspectRatio: '16 / 10',
+        overflow: 'hidden', borderRadius: '8px 8px 0 0',
+        background: '#F0F0F0', flexShrink: 0,
+      },
+      chromeBar: {
+        position: 'relative', zIndex: 2, height: '28px', background: '#EBEBEB',
+        borderBottom: '1px solid #DEDEDE', display: 'flex', alignItems: 'center',
+        paddingLeft: '12px', gap: '6px',
+      },
+      dotRed: { width: '8px', height: '8px', borderRadius: '50%', background: '#FF6058' },
+      dotYellow: { width: '8px', height: '8px', borderRadius: '50%', background: '#FFBD2E' },
+      dotGreen: { width: '8px', height: '8px', borderRadius: '50%', background: '#28CA41' },
+      previewContent: {
+        position: 'relative', width: '100%', height: 'calc(100% - 28px)', overflow: 'hidden',
+      },
+      previewFrame: {
+        position: 'absolute', top: 0, left: 0, width: '1280px', height: '800px',
+        transformOrigin: 'top left', border: 'none', pointerEvents: 'none',
+        background: '#FFFFFF',
+      },
+      previewImg: {
+        position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
+        objectFit: 'cover', objectPosition: 'top center', display: 'none', pointerEvents: 'none',
+      },
+      cardBody: {
+        display: 'flex', flexDirection: 'column', gap: '12px', padding: '24px', flexGrow: 1,
+      },
+      onFrameLoad: this.onFrameLoad,
+      onFrameError: this.onFrameError,
+      setPreview: this.setPreview,
+
+      badge: {
+        alignSelf: 'flex-start', fontFamily: "'Inter',sans-serif", fontWeight: 500,
+        fontSize: '11px', letterSpacing: '0.07em', textTransform: 'uppercase', color: '#9B9B9B',
+        background: 'transparent', border: '1px solid #E8E8E8', borderRadius: '4px', padding: '3px 8px',
+      },
+      cardName: {
+        fontFamily: "'Inter',sans-serif", fontWeight: 600, fontSize: '18px',
+        lineHeight: 1.3, color: '#0D0D0D', margin: 0,
+      },
+      cardDesc: {
+        fontFamily: "'Inter',sans-serif", fontWeight: 400, fontSize: '15px',
+        lineHeight: 1.6, color: '#5C5C5C', margin: 0, flexGrow: 1,
+      },
+      openLink: {
+        display: 'inline-flex', alignItems: 'center', gap: '6px', alignSelf: 'flex-start',
+        fontFamily: "'Inter',sans-serif", fontWeight: 500, fontSize: '14px', color: '#0D0D0D',
+        padding: '8px 0', transition: 'color .2s ease, gap .2s ease',
+      },
+      openLinkHover: { color: '#5C5C5C', gap: '8px' },
+
+      // Footer
+      footerSection: { padding: isMob ? '56px 0 48px' : '80px 0 64px' },
+      footerRow: {
+        ...this.anim('footer', 0),
+        display: 'flex', flexDirection: isMob ? 'column' : 'row',
+        justifyContent: 'space-between',
+        alignItems: isMob ? 'flex-start' : 'center',
+        gap: isMob ? '24px' : '0',
+      },
+      footerLeft: { display: 'flex', flexDirection: 'column', gap: '4px' },
+      footerBrand: { fontFamily: "'Inter',sans-serif", fontWeight: 600, fontSize: '16px', color: '#0D0D0D' },
+      footerTagline: { fontFamily: "'Inter',sans-serif", fontWeight: 400, fontSize: '14px', color: '#9B9B9B' },
+      footerIG: {
+        display: 'inline-flex', alignItems: 'center', gap: '6px',
+        fontFamily: "'Inter',sans-serif", fontWeight: 500, fontSize: '14px', color: '#0D0D0D',
+        transition: 'color .2s ease',
+      },
+      footerIGHover: { color: '#5C5C5C' },
+      copyright: {
+        marginTop: isMob ? '32px' : '40px',
+        fontFamily: "'Inter',sans-serif", fontWeight: 400, fontSize: '12px', color: '#9B9B9B',
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>
