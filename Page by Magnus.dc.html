@@ -23,7 +23,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;background:#FFFFFF;}
+  html,body{margin:0;padding:0;background:radial-gradient(ellipse 70% 60% at 8% 90%,#FF9458 0%,rgba(255,148,88,0) 65%),radial-gradient(ellipse 55% 55% at 92% 10%,#FF7A3C 0%,rgba(255,122,60,0) 65%),radial-gradient(ellipse 40% 45% at 75% 82%,#FFB07A 0%,rgba(255,176,122,0) 60%),#E84800;background-attachment:fixed;}
   a{text-decoration:none;color:inherit;}
   :focus-visible{outline:2px solid #0D0D0D;outline-offset:3px;border-radius:4px;}
   @keyframes scfade{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
@@ -35,7 +35,6 @@
 </style>
 </helmet>
 <div ref="{{ setRoot }}" style="{{ page }}">
-  <div style="{{ heroOuter }}">
   <header style="{{ heroSection }}" aria-labelledby="hero-heading">
     <div data-anim="hero-brand" style="{{ brandStyle }}">Page by Magnus</div>
     <h1 id="hero-heading" data-anim="hero-head" style="{{ h1Style }}">Premium Website Demos</h1>
@@ -45,7 +44,6 @@
       <a href="https://www.instagram.com/pagebymagnus/" target="_blank" rel="noopener noreferrer" style="{{ btnGhost }}" style-hover="{{ btnGhostHover }}">Instagram <span aria-hidden="true">↗</span></a>
     </div>
   </header>
-  </div>
 
   <main>
     <section id="trainer" style="{{ sectionTrainer }}" aria-labelledby="trainer-heading">
@@ -242,7 +240,7 @@ class Component extends DCLogic {
 
     const pad = isDesk ? 40 : (bp === 'tablet' ? 24 : 20);
     const container = { width: '100%', maxWidth: '1120px', margin: '0 auto', padding: `0 ${pad}px` };
-    const containerRule = { ...container, borderTop: '1px solid #E8E8E8' };
+    const containerRule = { ...container, borderTop: '1px solid rgba(255,255,255,0.2)' };
 
     // Hero
     const heroPadTop = isMob ? 96 : 160;
@@ -296,23 +294,12 @@ class Component extends DCLogic {
       trainerCards, cafeCards,
 
       page: {
-        background: '#FFFFFF', color: '#0D0D0D', minHeight: '100vh',
+        background: 'transparent', color: '#0D0D0D', minHeight: '100vh',
         fontFamily: "'Inter',-apple-system,sans-serif",
         WebkitFontSmoothing: 'antialiased',
       },
 
       // Hero
-      heroOuter: {
-        position: 'relative',
-        overflow: 'hidden',
-        background: [
-          'radial-gradient(ellipse 70% 60% at 8% 90%, #FF9458 0%, rgba(255,148,88,0) 65%)',
-          'radial-gradient(ellipse 55% 55% at 92% 10%, #FF7A3C 0%, rgba(255,122,60,0) 65%)',
-          'radial-gradient(ellipse 40% 45% at 75% 82%, #FFB07A 0%, rgba(255,176,122,0) 60%)',
-          '#E84800',
-        ].join(', '),
-        borderRadius: '0 0 36px 36px',
-      },
       heroSection: {
         display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center',
         padding: `${heroPadTop}px ${pad}px ${heroPadBot}px`,
@@ -357,15 +344,15 @@ class Component extends DCLogic {
       secTitle: {
         fontFamily: "'Instrument Serif',Georgia,serif", fontWeight: 400,
         fontSize: `${titleSize}px`, lineHeight: 1.15, letterSpacing: '-0.01em',
-        color: '#0D0D0D', margin: '0 0 16px',
+        color: '#FFFFFF', margin: '0 0 16px',
       },
       secSub: {
         fontFamily: "'Inter',sans-serif", fontWeight: 400, fontSize: `${subSize}px`,
-        lineHeight: 1.6, color: '#5C5C5C', maxWidth: '480px', margin: 0,
+        lineHeight: 1.6, color: 'rgba(255,255,255,0.78)', maxWidth: '480px', margin: 0,
       },
       secSubWide: {
         fontFamily: "'Inter',sans-serif", fontWeight: 400, fontSize: `${subSize}px`,
-        lineHeight: 1.6, color: '#5C5C5C', maxWidth: '520px', margin: 0,
+        lineHeight: 1.6, color: 'rgba(255,255,255,0.78)', maxWidth: '520px', margin: 0,
       },
 
       gridTrainer: { display: 'grid', gridTemplateColumns: trainerCols, gap: `${gridGap}px` },
@@ -435,17 +422,17 @@ class Component extends DCLogic {
         gap: isMob ? '24px' : '0',
       },
       footerLeft: { display: 'flex', flexDirection: 'column', gap: '4px' },
-      footerBrand: { fontFamily: "'Inter',sans-serif", fontWeight: 600, fontSize: '16px', color: '#0D0D0D' },
-      footerTagline: { fontFamily: "'Inter',sans-serif", fontWeight: 400, fontSize: '14px', color: '#9B9B9B' },
+      footerBrand: { fontFamily: "'Inter',sans-serif", fontWeight: 600, fontSize: '16px', color: '#FFFFFF' },
+      footerTagline: { fontFamily: "'Inter',sans-serif", fontWeight: 400, fontSize: '14px', color: 'rgba(255,255,255,0.6)' },
       footerIG: {
         display: 'inline-flex', alignItems: 'center', gap: '6px',
-        fontFamily: "'Inter',sans-serif", fontWeight: 500, fontSize: '14px', color: '#0D0D0D',
+        fontFamily: "'Inter',sans-serif", fontWeight: 500, fontSize: '14px', color: '#FFFFFF',
         transition: 'color .2s ease',
       },
-      footerIGHover: { color: '#5C5C5C' },
+      footerIGHover: { color: 'rgba(255,255,255,0.7)' },
       copyright: {
         marginTop: isMob ? '32px' : '40px',
-        fontFamily: "'Inter',sans-serif", fontWeight: 400, fontSize: '12px', color: '#9B9B9B',
+        fontFamily: "'Inter',sans-serif", fontWeight: 400, fontSize: '12px', color: 'rgba(255,255,255,0.45)',
       },
     };
   }
