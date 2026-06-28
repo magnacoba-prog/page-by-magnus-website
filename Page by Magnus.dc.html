@@ -109,6 +109,52 @@
         </div>
       </div>
     </section>
+
+    <section id="customize" aria-labelledby="customize-heading" style="border-top:1px solid #E8E8E8;">
+      <div style="width:100%;max-width:1120px;margin:0 auto;padding:clamp(48px,8vw,96px) clamp(20px,4vw,40px);">
+        <div style="max-width:600px;margin:0 auto 48px;text-align:center;">
+          <h2 id="customize-heading" style="font-family:'Instrument Serif',Georgia,serif;font-weight:400;font-size:clamp(28px,5vw,44px);line-height:1.1;letter-spacing:-0.03em;color:#0D0D0D;margin:0 0 20px;">Want this for your business?</h2>
+          <p style="font-family:'Inter',sans-serif;font-size:clamp(15px,2vw,17px);line-height:1.65;color:#5C5C5C;margin:0;">Copy the prompt below, paste it into <strong style="color:#0D0D0D;">Claude.ai</strong>, and get a fully designed website tailored to your brand — in one conversation.</p>
+        </div>
+        <div style="border:1px solid #E0E0E0;border-radius:12px;overflow:hidden;background:#FAFAFA;max-width:820px;margin:0 auto;">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-bottom:1px solid #E0E0E0;background:#F0F0F0;">
+            <span style="font-family:'Inter',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#888;">Customization Prompt</span>
+            <button id="pbm-copy-btn" onclick="var t=document.getElementById('pbm-prompt-text').innerText;navigator.clipboard.writeText(t).then(function(){var b=document.getElementById('pbm-copy-btn');b.textContent='Copied!';b.style.background='#0D0D0D';b.style.color='#FFF';setTimeout(function(){b.textContent='Copy Prompt';b.style.background='#FFF';b.style.color='#0D0D0D';},2000);}).catch(function(){var b=document.getElementById('pbm-copy-btn');b.textContent='Use Ctrl+A then Ctrl+C';setTimeout(function(){b.textContent='Copy Prompt';},3000);});" style="font-family:'Inter',sans-serif;font-size:12px;font-weight:500;color:#0D0D0D;background:#FFFFFF;border:1px solid #C8C8C8;border-radius:6px;padding:6px 16px;cursor:pointer;transition:background .2s,color .2s;">Copy Prompt</button>
+          </div>
+          <pre id="pbm-prompt-text" style="margin:0;padding:28px 32px;font-family:'Inter',monospace;font-size:13px;line-height:1.8;color:#2C2C2C;white-space:pre-wrap;word-wrap:break-word;overflow-x:auto;text-align:left;">You are a senior web designer building a premium one-page business website. I want to customize one of the Page by Magnus demos for my business.
+
+DEMO TO CUSTOMIZE
+[Choose one: Neighborhood Warmth / Matinal Cafe / Studio Vera / Serene Strength / Fit With Me]
+
+MY BUSINESS
+- Business name: [Your business name]
+- Type: [e.g. personal trainer, cafe, wellness studio, coffee shop]
+- Location: [City, Country]
+- About: [2-3 sentences describing what you do, who you serve, and what makes you different]
+- Target audience: [Describe your ideal client in 1-2 sentences]
+
+BRANDING
+- Brand colors: [Hex codes, or: keep the template palette]
+- Tone: [warm and friendly / bold and confident / calm and premium / bright and energetic]
+- Logo: [Yes - describe it / No - use text logo]
+- Images: [I have my own photos / use stock photos from Pexels]
+
+CONTENT
+- Hero tagline: [Your headline, or: generate one based on my business]
+- Key services or menu items: [List 3-6 items with short descriptions]
+- Pricing: [Include pricing / keep it vague / no pricing section]
+- Testimonials: [Real quotes: "[Quote]" - Client name / Generate 3 realistic placeholders]
+- Contact: [Phone / email / Instagram handle / booking link]
+- Social proof: [Years in business / number of clients / certifications / awards]
+
+NOTES
+[Any specific sections to add, remove, or change from the original demo]
+
+Please redesign the chosen demo using my details above. Update all copy, colors, imagery direction, and content to match my brand. Maintain the same clean, conversion-focused layout and premium aesthetic.</pre>
+        </div>
+        <p style="text-align:center;margin:32px 0 0;font-family:'Inter',sans-serif;font-size:14px;color:#9B9B9B;">Or reach out directly via <a href="https://www.instagram.com/pagebymagnus/" target="_blank" rel="noopener noreferrer" style="color:#0D0D0D;text-decoration:underline;text-underline-offset:3px;">Instagram</a></p>
+      </div>
+    </section>
   </main>
 
   <footer style="{{ footerSection }}">
