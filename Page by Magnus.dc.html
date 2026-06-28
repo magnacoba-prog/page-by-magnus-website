@@ -23,7 +23,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;background:radial-gradient(ellipse 70% 60% at 8% 90%,#FF9458 0%,rgba(255,148,88,0) 65%),radial-gradient(ellipse 55% 55% at 92% 10%,#FF7A3C 0%,rgba(255,122,60,0) 65%),radial-gradient(ellipse 40% 45% at 75% 82%,#FFB07A 0%,rgba(255,176,122,0) 60%),#E84800;background-attachment:fixed;}
+  html{margin:0;padding:0;background:#FFFFFF;}
+  body{margin:0;padding:0;background:radial-gradient(ellipse 70% 60% at 8% 90%,rgba(255,148,88,0.5) 0%,rgba(255,148,88,0) 65%),radial-gradient(ellipse 55% 55% at 92% 10%,rgba(255,122,60,0.45) 0%,rgba(255,122,60,0) 65%),radial-gradient(ellipse 40% 45% at 75% 82%,rgba(255,176,122,0.45) 0%,rgba(255,176,122,0) 60%),rgba(232,72,0,0.5);background-attachment:fixed;}
   a{text-decoration:none;color:inherit;}
   :focus-visible{outline:2px solid #0D0D0D;outline-offset:3px;border-radius:4px;}
   @keyframes scfade{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
@@ -240,7 +241,7 @@ class Component extends DCLogic {
 
     const pad = isDesk ? 40 : (bp === 'tablet' ? 24 : 20);
     const container = { width: '100%', maxWidth: '1120px', margin: '0 auto', padding: `0 ${pad}px` };
-    const containerRule = { ...container, borderTop: '1px solid rgba(255,255,255,0.2)' };
+    const containerRule = { ...container, borderTop: '1px solid rgba(0,0,0,0.1)' };
 
     // Hero
     const heroPadTop = isMob ? 96 : 160;
@@ -308,19 +309,19 @@ class Component extends DCLogic {
       brandStyle: {
         ...this.anim('hero-brand', 0),
         fontFamily: "'Inter',sans-serif", fontWeight: 600, fontSize: '13px',
-        letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.65)',
+        letterSpacing: '0.1em', textTransform: 'uppercase', color: '#9B9B9B',
         marginBottom: '40px',
       },
       h1Style: {
         ...this.anim('hero-head', 100),
         fontFamily: "'Instrument Serif',Georgia,serif", fontWeight: 400,
         fontSize: `${headlineSize}px`, lineHeight: 1.05, letterSpacing: '-0.03em',
-        color: '#FFFFFF', margin: '0 0 24px',
+        color: '#0D0D0D', margin: '0 0 24px',
       },
       heroCopy: {
         ...this.anim('hero-copy', 200),
         fontFamily: "'Inter',sans-serif", fontWeight: 400, fontSize: '18px',
-        lineHeight: 1.65, color: 'rgba(255,255,255,0.85)', maxWidth: '560px', margin: '0 0 40px',
+        lineHeight: 1.65, color: '#5C5C5C', maxWidth: '560px', margin: '0 0 40px',
       },
       ctaRow: {
         ...this.anim('hero-cta', 300),
@@ -328,11 +329,11 @@ class Component extends DCLogic {
         justifyContent: 'center', alignItems: 'center', gap: '12px',
         width: isMob ? '100%' : 'auto', maxWidth: isMob ? '320px' : 'none',
       },
-      btnPrimary: { ...btnBase, background: '#FFFFFF', color: '#E84800', transition: 'background-color .2s ease, transform .1s ease' },
-      btnPrimaryHover: { background: 'rgba(255,255,255,0.9)' },
+      btnPrimary: { ...btnBase, background: '#E84800', color: '#FFFFFF', transition: 'background-color .2s ease, transform .1s ease' },
+      btnPrimaryHover: { background: '#C03C00' },
       btnPrimaryActive: { transform: 'scale(0.97)' },
-      btnGhost: { ...btnBase, background: 'rgba(255,255,255,0.12)', color: '#FFFFFF', border: '1px solid rgba(255,255,255,0.4)', transition: 'border-color .2s ease, background .2s ease' },
-      btnGhostHover: { background: 'rgba(255,255,255,0.22)', borderColor: 'rgba(255,255,255,0.65)' },
+      btnGhost: { ...btnBase, background: 'transparent', color: '#0D0D0D', border: '1px solid rgba(0,0,0,0.2)', transition: 'border-color .2s ease, color .2s ease' },
+      btnGhostHover: { borderColor: '#0D0D0D', color: '#0D0D0D' },
 
       // Sections
       sectionTrainer: { padding: `${secPadTop}px 0 ${secPadBot}px` },
@@ -344,15 +345,15 @@ class Component extends DCLogic {
       secTitle: {
         fontFamily: "'Instrument Serif',Georgia,serif", fontWeight: 400,
         fontSize: `${titleSize}px`, lineHeight: 1.15, letterSpacing: '-0.01em',
-        color: '#FFFFFF', margin: '0 0 16px',
+        color: '#0D0D0D', margin: '0 0 16px',
       },
       secSub: {
         fontFamily: "'Inter',sans-serif", fontWeight: 400, fontSize: `${subSize}px`,
-        lineHeight: 1.6, color: 'rgba(255,255,255,0.78)', maxWidth: '480px', margin: 0,
+        lineHeight: 1.6, color: '#5C5C5C', maxWidth: '480px', margin: 0,
       },
       secSubWide: {
         fontFamily: "'Inter',sans-serif", fontWeight: 400, fontSize: `${subSize}px`,
-        lineHeight: 1.6, color: 'rgba(255,255,255,0.78)', maxWidth: '520px', margin: 0,
+        lineHeight: 1.6, color: '#5C5C5C', maxWidth: '520px', margin: 0,
       },
 
       gridTrainer: { display: 'grid', gridTemplateColumns: trainerCols, gap: `${gridGap}px` },
@@ -422,17 +423,17 @@ class Component extends DCLogic {
         gap: isMob ? '24px' : '0',
       },
       footerLeft: { display: 'flex', flexDirection: 'column', gap: '4px' },
-      footerBrand: { fontFamily: "'Inter',sans-serif", fontWeight: 600, fontSize: '16px', color: '#FFFFFF' },
-      footerTagline: { fontFamily: "'Inter',sans-serif", fontWeight: 400, fontSize: '14px', color: 'rgba(255,255,255,0.6)' },
+      footerBrand: { fontFamily: "'Inter',sans-serif", fontWeight: 600, fontSize: '16px', color: '#0D0D0D' },
+      footerTagline: { fontFamily: "'Inter',sans-serif", fontWeight: 400, fontSize: '14px', color: '#9B9B9B' },
       footerIG: {
         display: 'inline-flex', alignItems: 'center', gap: '6px',
-        fontFamily: "'Inter',sans-serif", fontWeight: 500, fontSize: '14px', color: '#FFFFFF',
+        fontFamily: "'Inter',sans-serif", fontWeight: 500, fontSize: '14px', color: '#0D0D0D',
         transition: 'color .2s ease',
       },
-      footerIGHover: { color: 'rgba(255,255,255,0.7)' },
+      footerIGHover: { color: '#5C5C5C' },
       copyright: {
         marginTop: isMob ? '32px' : '40px',
-        fontFamily: "'Inter',sans-serif", fontWeight: 400, fontSize: '12px', color: 'rgba(255,255,255,0.45)',
+        fontFamily: "'Inter',sans-serif", fontWeight: 400, fontSize: '12px', color: '#9B9B9B',
       },
     };
   }
